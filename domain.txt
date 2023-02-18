@@ -1,0 +1,7 @@
+domain = input("Enter a domain: ")
+response = requests.get(f"http://{domain}")
+content = response.text
+if re.search(r"wp-(content|admin|includes)", content):
+    print("Yes")
+else:
+    print("No")
